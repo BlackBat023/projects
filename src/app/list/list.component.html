@@ -1,0 +1,75 @@
+<h1>World wide COVID-19 cases</h1>
+<h3>Updated at: {{ cases[0].statistic_taken_at }}</h3>
+<div class="wrapper">
+  <div class="statistic" *ngIf="cases">
+    <div class="total_case_box">
+      <h2>Total Cases</h2>
+      <p id="total_cases">{{ cases[0].total_cases }} <span></span></p>
+    </div>
+    <div class="box_wrapper">
+      <div class="box">
+        <h2>Total Deaths</h2>
+        <p id="total_death">{{ cases[0].total_deaths }}</p>
+      </div>
+
+      <div class="box">
+        <h2>Total Recovery</h2>
+        <p id="total_recovered">{{ cases[0].total_recovered }}</p>
+      </div>
+
+      <div class="box">
+        <h2>New case</h2>
+        <p id="new_case">{{ cases[0].new_cases }}</p>
+      </div>
+
+      <div class="box">
+        <h2>New Deaths</h2>
+        <p id="new_death">{{ cases[0].new_deaths }}</p>
+      </div>
+    </div>
+
+    <div class="country_box" *ngIf="cases">
+      <div class="container">
+        <input
+          type="text"
+          class="form-control-sm"
+          name="search"
+          [(ngModel)]="search"
+          autocomplete="off"
+          placeholder="Search by Country Name"
+        />
+      </div>
+      <table>
+        <tr>
+          <th>
+            <h3><strong>Country Name: </strong></h3>
+          </th>
+          <th>
+            <h3><strong>Cases: </strong></h3>
+          </th>
+          <th>
+            <h3><strong>Deaths: </strong></h3>
+          </th>
+          <th>
+            <h3><strong>Recovered: </strong></h3>
+          </th>
+          <th>
+            <h3><strong>Critical: </strong></h3>
+          </th>
+        </tr>
+        <tr
+          *ngFor="let country of cases[1].countries_stat | filter: search"
+          id="results"
+        >
+          <td>{{ country.country_name }}</td>
+          <td>{{ country.cases }}</td>
+          <td [ngClass]="'negative'">{{ country.deaths }}</td>
+          <td [ngClass]="'positive'">
+            {{ country.total_recovered }}
+          </td>
+          <td [ngClass]="'critical'">{{ country.serious_critical }}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
