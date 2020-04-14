@@ -11,8 +11,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
-import { StorageServiceModule } from 'ngx-webstorage-service';
-
 @NgModule({
   declarations: [AppComponent, HomeComponent, ListComponent],
   imports: [
@@ -21,7 +19,6 @@ import { StorageServiceModule } from 'ngx-webstorage-service';
     FormsModule,
     HttpClientModule,
     Ng2SearchPipeModule,
-    StorageServiceModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
