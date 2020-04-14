@@ -30,14 +30,8 @@
 
     <div class="country_box" *ngIf="cases">
       <div class="container">
-        <input
-          type="text"
-          class="form-control-sm"
-          name="search"
-          [(ngModel)]="search"
-          autocomplete="off"
-          placeholder="Search by Country Name"
-        />
+        <input type="text" class="form-control-sm" name="search" [(ngModel)]="search" autocomplete="off"
+          placeholder="Search by Country Name" />
       </div>
       <table>
         <tr>
@@ -57,11 +51,8 @@
             <h3><strong>Critical: </strong></h3>
           </th>
         </tr>
-        <tr
-          *ngFor="let country of cases[1].countries_stat | filter: search"
-          id="results"
-        >
-          <td>{{ country.country_name }}</td>
+        <tr *ngFor="let country of cases[1].countries_stat | filter: search" id="results">
+          <td><strong>{{ country.country_name }}</strong></td>
           <td>{{ country.cases }}</td>
           <td [ngClass]="'negative'">{{ country.deaths }}</td>
           <td [ngClass]="'positive'">
