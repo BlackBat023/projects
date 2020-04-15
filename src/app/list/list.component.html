@@ -28,13 +28,13 @@
       </div>
     </div>
 
-    <div class="country_box" *ngIf="cases">
+    <div class="country_box container-fluid" *ngIf="cases">
       <div class="container">
         <input type="text" class="form-control-sm" name="search" [(ngModel)]="search" autocomplete="off"
           placeholder="Search by Country Name" />
       </div>
-      <table>
-        <tr>
+      <table class="container-fluid">
+        <tr class="tabel_header">
           <th>
             <h3><strong>Country Name: </strong></h3>
           </th>
