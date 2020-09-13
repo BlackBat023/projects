@@ -9,6 +9,7 @@ import { HttpService } from '../http.service';
 export class ListComponent implements OnInit {
   cases = [];
   countries: Object;
+  search: any;
 
   constructor(private _http: HttpService) {}
 
