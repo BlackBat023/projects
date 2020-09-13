@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "homepage": "https://blackbat023.github.io/covid-track",
+  "homepage": "https://BlackBat023.github.io/covid-track",
   "private": true,
   "dependencies": {
     "@angular/animations": "~9.1.0",
